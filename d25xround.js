@@ -1,53 +1,50 @@
-const cardPictures = ["./ca1.jpg", "./ca2.jpg", "./ca3.jpg", "./ca4.jpg", "./ca5.jpg", "./ca6.jpg", "./ca1.jpg", "./ca2.jpg", "./ca3.jpg", "./ca4.jpg", "./ca5.jpg", "./ca6.jpg"];
-
-function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
+class Game {
+    constructor() {
+        this.board = new Board();
+        this.tic = "X"
+        this.tac = "o"
+        this.currentTurn = this.tic
+        this.scorePlayer1 = 0
+        this.scorePlayer2 = 0
     }
-    return a
-}
-let shuffled = shuffle(cardPictures)
-let cards = document.querySelectorAll(".cards");
-for (let i = 0; i < cards.length; i++) {
+    initApp() {
 
-    let div = document.createElement("div");
-    div.classList.add("background")
-    div.style.backgroundImage = `url(${"./backcard.jpg"})`
-    
-
-    let background = document.querySelectorAll(".background")
-    for (let i = 0; i < background.length; i++) {
-        background[i].addEventListener("click", switchOn)
-        console.log(background)
-        function switchOn(event) {
-            background[i].style.backgroundImage = `url(${shuffled[i]})`;
-            background[i].classList.add("pair")
-            event.preventDefault();
-
-        }
     }
-    cards[i].appendChild(div);
-    div.style.width = "100%"
-    div.style.height = "100%"
-    div.style.backgroundRepeat = "round"
+    onBoardClick() {
 
+    }
 
+    checkRows(){
+
+    }
+
+    chkeckColumns(){
+        
+    }
+
+    checkDiagonal(){
+        
+    }
 }
 
+class Board{
+    constructor (){
+        this.cells = [];
+        this.cells.push([]);
+        this.cells[0][0] = $(".row:nth-child(1) .cell:nth-child(1)");
+        this.cells[0][1] = $(".row:nth-child(1) .cell:nth-child(2)")
+        this.cells[0][2] = $(".row:nth-child(1) .cell:nth-child(3)")
+        this.cells.push([]);
+        this.cells[1][0] = $(".row:nth-child(2) .cell:nth-child(1)");
+        this.cells[1][1] = $(".row:nth-child(2) .cell:nth-child(2)")
+        this.cells[1][2] = $(".row:nth-child(2) .cell:nth-child(3)")
+        this.cells.push([]);
+        this.cells[2][0] = $(".row:nth-child(3) .cell:nth-child(1)");
+        this.cells[2][1] = $(".row:nth-child(3) .cell:nth-child(2)")
+        this.cells[2][2] = $(".row:nth-child(3) .cell:nth-child(3)")
+     }
+    func(somefunc){
+      
+    }
 
-
-
-    //shuffle the cards
-    //make two cards for each picture
-    //flip pictures on event
-
-
-
-
-
-
-
+    }
